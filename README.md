@@ -1,0 +1,21 @@
+# Calista Chiew — profile page
+
+Static one-page profile for Calista Chiew Yung Xuan (BSc (Hons) Architecture, SEGi University).
+Live at https://songkhuen0828.github.io/calista-chiew/
+
+- `index.html` — all page content
+- `assets/css/style.css`, `assets/js/main.js` — styling and the image viewer
+- `assets/img/` — web images extracted from the portfolio PDF
+- `assets/docs/` — downloadable CV and portfolio
+
+## Updating
+
+Edit `index.html` and push to `main`; GitHub Pages republishes in about a minute.
+
+To regenerate images and PDFs after the CV or portfolio changes, put the new
+`CV_Calista Chiew.pdf` and `Portfolio_Calista Chiew.pdf` in the project root and run:
+
+    pip install pymupdf pillow
+    python3 tools/build_assets.py
+
+The image list (which PDF image goes where) is the `MANIFEST` in that script.

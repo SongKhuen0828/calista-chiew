@@ -1,0 +1,5 @@
+# Source PDFs live at the root; the published copies are in assets/docs
+/*.pdf
+.claude/
+.DS_Store
+__pycache__/
