@@ -1,7 +1,8 @@
 # Calista Chiew — profile page
 
 Static one-page profile for Calista Chiew Yung Xuan (BSc (Hons) Architecture, SEGi University).
-Live at https://songkhuen0828.github.io/calista-chiew/
+Live at https://calista-chiew.vercel.app/ (also mirrored on GitHub Pages at
+https://songkhuen0828.github.io/calista-chiew/)
 
 - `index.html` — all page content
 - `assets/css/style.css`, `assets/js/main.js` — styling and the image viewer
@@ -10,7 +11,8 @@ Live at https://songkhuen0828.github.io/calista-chiew/
 
 ## Updating
 
-Edit `index.html` and push to `main`; GitHub Pages republishes in about a minute.
+Edit `index.html`, then redeploy with `npx vercel deploy --prod` (and push to `main`
+to update the GitHub Pages copy).
 
 To regenerate images and PDFs after the CV or portfolio changes, put the new
 `CV_Calista Chiew.pdf` and `Portfolio_Calista Chiew.pdf` in the project root and run:
