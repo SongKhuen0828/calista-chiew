@@ -8,6 +8,8 @@ https://songkhuen0828.github.io/calista-chiew/)
 - `assets/css/style.css`, `assets/js/main.js` — styling and the image viewer
 - `assets/img/` — web images extracted from the portfolio PDF
 - `assets/docs/` — downloadable CV and portfolio
+- `assets/icons/`, `assets/img/places/` — software icons and school/place photos; sources and
+  licences are credited in the page footer
 
 ## Updating
 
