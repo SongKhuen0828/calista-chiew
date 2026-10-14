@@ -141,8 +141,9 @@ p { text-wrap: pretty; }
 
 /* Portrait as an arch, with an outer clay arch and a ground line, like a doorway in elevation */
 .hero-photo {
-  position: relative; justify-self: center;
-  width: calc(100% - 28px); max-width: 400px; margin: 14px 14px 0;
+  --ground: 36px;  /* how far the ground line runs past the photo on each side */
+  position: relative; justify-self: start;
+  width: calc(100% - 2 * var(--ground)); max-width: 400px; margin: 14px 0 0 var(--ground);
 }
 .hero-photo img {
   width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
@@ -154,7 +155,7 @@ p { text-wrap: pretty; }
   border-radius: 999px 999px 0 0; pointer-events: none;
 }
 .hero-photo::after {
-  content: ""; position: absolute; left: -36px; right: -36px; bottom: 0;
+  content: ""; position: absolute; left: calc(-1 * var(--ground)); right: calc(-1 * var(--ground)); bottom: 0;
   border-bottom: 1.5px solid var(--ink);
 }
 
@@ -191,11 +192,11 @@ p { text-wrap: pretty; }
 }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-photo { justify-self: start; max-width: 300px; }
+  .hero-photo { max-width: 300px; }
 }
 @media (max-width: 640px) {
   .hero-photo { max-width: 230px; }
-  .hero-photo::after { left: -26px; right: -26px; }
+  .hero-photo { --ground: 26px; }
   .tstrip { grid-template-columns: 1fr 1fr; }
   .tstrip div:nth-child(odd) { border-left: 0; }
   .tstrip div:nth-child(even) { border-left: 1px solid var(--rule); }
@@ -246,15 +247,15 @@ p { text-wrap: pretty; }
 .project:first-of-type { padding-top: 0; }
 .project:last-of-type { border-bottom: 0; padding-bottom: 0; }
 
+.gallery { grid-column: 1 / span 7; align-self: start; }
 .lead {
-  grid-column: 1 / span 7; align-self: start;
-  display: block; padding: 0; border: 0; background: var(--sage-light);
+  display: block; width: 100%; padding: 0; border: 0; background: var(--sage-light);
   border-radius: var(--r-img); overflow: hidden; cursor: zoom-in;
 }
 .lead img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform .7s cubic-bezier(.2, .7, .1, 1); }
 .lead:hover img { transform: scale(1.025); }
-.project-body { grid-column: 8 / span 5; align-self: center; }
-.project:nth-of-type(even) .lead { grid-column: 6 / span 7; order: 2; }
+.project-body { grid-column: 8 / span 5; align-self: start; }
+.project:nth-of-type(even) .gallery { grid-column: 6 / span 7; order: 2; }
 .project:nth-of-type(even) .project-body { grid-column: 1 / span 5; order: 1; }
 
 .ptitle { margin-bottom: 14px; }
@@ -270,13 +271,16 @@ p { text-wrap: pretty; }
   font-weight: 600; font-size: 1.15rem; line-height: 1.4;
 }
 
-.specs { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; margin: 4px 0 20px; border-bottom: 1px solid var(--rule); }
-.specs div { padding: 10px 0; border-top: 1px solid var(--rule); }
+.specs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px;
+  margin: 4px 0 20px; padding: 16px 18px;
+  background: var(--sage-light); border-radius: 12px;
+}
 .specs dt { color: var(--moss); }
 .specs dd { margin: 3px 0 0; font-size: 14.5px; line-height: 1.4; }
 .specs strong { color: var(--clay-deep); font-weight: 600; }
 
-.thumbs { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.thumbs { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .thumbs button {
   display: block; width: 100%; aspect-ratio: 1; padding: 0; border: 0; overflow: hidden;
   border-radius: 8px; background: var(--sage-light); cursor: zoom-in;
@@ -294,12 +298,9 @@ p { text-wrap: pretty; }
 
 @media (max-width: 980px) {
   .project { grid-template-columns: 1fr; }
-  .lead, .project-body,
-  .project:nth-of-type(even) .lead,
+  .gallery, .project-body,
+  .project:nth-of-type(even) .gallery,
   .project:nth-of-type(even) .project-body { grid-column: 1 / -1; order: 0; }
-}
-@media (max-width: 420px) {
-  .specs { grid-template-columns: 1fr; }
 }
 
 /* Technical work ----------------------------------------------------- */
@@ -322,6 +323,7 @@ p { text-wrap: pretty; }
 /* Experience --------------------------------------------------------- */
 .rows { list-style: none; margin: 0; padding: 0; }
 .row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--rule); }
+.row:first-child { border-top: 0; padding-top: 0; }
 .row:last-child { border-bottom: 1px solid var(--rule); }
 .row-date { margin: 0; padding-top: 8px; color: var(--clay-deep); }
 .row-main h3 { margin: 0; font-weight: 700; font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.01em; }
@@ -353,7 +355,7 @@ p { text-wrap: pretty; }
 .deans h3 { margin: 0; font-weight: 700; font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.02em; }
 .deans-note { margin: 6px 0 14px; color: var(--moss); font-size: 14px; }
 .deans table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
-.deans th { text-align: left; color: var(--moss); padding: 6px 0; border-bottom: 1px solid var(--ink); }
+.deans th { text-align: left; color: var(--moss); padding: 6px 0; border-bottom: 1px solid var(--rule); }
 .deans td { padding: 10px 0; border-bottom: 1px solid var(--rule); }
 .deans tbody tr:last-child td { border-bottom: 0; }
 .deans th:last-child, .deans td:last-child { text-align: right; }
@@ -369,7 +371,7 @@ p { text-wrap: pretty; }
 
 /* Education & skills ------------------------------------------------- */
 .edu { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); }
-.col-h { margin: 0 0 4px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); color: var(--clay-deep); }
+.col-h { margin: 0 0 4px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); color: var(--clay-deep); }
 .col-h ~ .col-h { margin-top: 40px; }
 .media-list { list-style: none; margin: 0; padding: 0; }
 .media { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
