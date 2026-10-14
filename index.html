@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/portrait.webp">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=202610141939">
 </head>
 <body>
 <a class="skip" href="#work">Skip to selected works</a>
@@ -25,7 +25,8 @@
 <header class="bar">
   <div class="wrap bar-inner">
     <a class="bar-name" href="#top">Calista Chiew</a>
-    <nav class="bar-nav" aria-label="Sections">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sections-nav">Menu</button>
+    <nav class="bar-nav" id="sections-nav" aria-label="Sections">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#recognition">Awards</a>
@@ -47,11 +48,10 @@
       </figure>
 
       <div class="hero-intro">
-        <h1 id="name" class="name"><span>Calista</span> <span>Chiew</span></h1>
+        <h1 id="name" class="name">Calista Chiew</h1>
         <p class="hero-sub">Calista Chiew Yung Xuan · Architectural graduate · Selangor, Malaysia</p>
         <p class="statement">Architecture was a new frontier when I began at SEGi University. It has become my main focus and my passion.</p>
-        <p class="intro">That newness still shapes how I work: I bring a beginner's curiosity and a professional's dedication to every project. My studio work ranges from a timber wholesale market in Terengganu to a coastal retreat in Langkawi, and most of it starts from the place itself: its craft, its climate and how people already use it.</p>
-        <p class="intro">I interned at DP Architects in 2026 and take freelance work in 3D modelling and rendering. I'm looking to bring an adaptive way of learning and a fresh design outlook to a forward-thinking architectural firm.</p>
+        <p class="intro">I bring a beginner's curiosity and a professional's dedication to every project, from a timber wholesale market in Terengganu to a coastal retreat in Langkawi. I interned at DP Architects in 2026 and take freelance work in 3D modelling and rendering.</p>
         <div class="hero-actions">
           <a class="btn btn-clay" href="assets/docs/Calista-Chiew-CV.pdf" download>Download CV</a>
           <a class="btn btn-outline" href="#work">See selected works</a>
@@ -77,6 +77,15 @@
       <p class="sec-note">Six studio and competition projects, 2024–2026, each with renders and technical drawings. Select any image to enlarge.</p>
     </header>
 
+    <ol class="pindex" aria-label="Projects">
+      <li><a href="#belong"><img src="assets/img/belong-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">Where We Belong</span><span class="pi-type">Holiday residence</span></a></li>
+      <li><a href="#pasar"><img src="assets/img/pasar-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">Pasar Borong Gong Pauh</span><span class="pi-type">Wholesale market</span></a></li>
+      <li><a href="#tidesmith"><img src="assets/img/tide-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">Tidesmith Atelier</span><span class="pi-type">Boat-making academy</span></a></li>
+      <li><a href="#merdeka"><img src="assets/img/merdeka-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">Merdeka Morphosis</span><span class="pi-type">Stadium adaptive reuse</span></a></li>
+      <li><a href="#crossroad"><img src="assets/img/crossroad-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">The Crossroad of Life</span><span class="pi-type">Interpretive centre</span></a></li>
+      <li><a href="#trade"><img src="assets/img/trade-1-sm.webp" width="900" height="563" alt="" loading="lazy"><span class="pi-title">Trade Through Time</span><span class="pi-type">Community pavilion</span></a></li>
+    </ol>
+
     <article class="project" id="belong" data-gallery="belong">
       <button class="lead" type="button" data-full="assets/img/belong-1.webp" data-caption="Where We Belong · aerial view of the residential clusters">
         <img src="assets/img/belong-1-sm.webp" srcset="assets/img/belong-1-sm.webp 900w, assets/img/belong-1.webp 1534w" sizes="(min-width: 980px) 58vw, 100vw" width="1534" height="1023" alt="Aerial render of terraced holiday residences stepping down a green slope" loading="lazy">
@@ -87,20 +96,20 @@
           <h3>Where We Belong</h3>
         </header>
         <p class="tagline">A retreat to pause, relax and belong.</p>
-        <p>A holiday retreat built as a village rather than a resort. Homes are grouped into small clusters around shared courtyards, linked by shaded walkways and garden corridors. Breaking the massing into smaller volumes keeps the scale human, and porous façades let wind, light and views pass through.</p>
-        <p>Shops and a café line the road edge to shield the homes from traffic noise. The northeast and southwest winds meet at a retention pond, which acts as a cooling node for the whole site.</p>
         <dl class="specs">
           <div><dt>Studio</dt><dd>Design Studio 6, final year</dd></div>
           <div><dt>Type</dt><dd>Residential, hospitality</dd></div>
           <div><dt>Site</dt><dd>Kuah, Langkawi, Kedah</dd></div>
           <div><dt>Year</dt><dd>2026</dd></div>
         </dl>
+        <p>A holiday retreat built as a village rather than a resort. Homes are grouped into small clusters around shared courtyards, linked by shaded walkways and garden corridors. Breaking the massing into smaller volumes keeps the scale human, and porous façades let wind, light and views pass through.</p>
+        <p>Shops and a café line the road edge to shield the homes from traffic noise. The northeast and southwest winds meet at a retention pond, which acts as a cooling node for the whole site.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/belong-2.webp" data-caption="Where We Belong · courtyard and pool between the clusters"><img src="assets/img/belong-2-sm.webp" alt="Courtyard with pool between residential blocks" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/belong-3.webp" data-caption="Where We Belong · corridor garden and stepped terraces"><img src="assets/img/belong-3-sm.webp" alt="Stepped terraces with planted balconies" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/belong-4.webp" data-caption="Where We Belong · 1- and 2-bedroom unit corridor"><img src="assets/img/belong-4-sm.webp" alt="Timber-decked residential corridor with residents" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/belong-5.webp" data-caption="Where We Belong · central courtyard"><img src="assets/img/belong-5-sm.webp" alt="Aerial view of the central courtyard" loading="lazy"></button></li>
-          <li><button type="button" data-full="assets/img/belong-6.webp" data-caption="Where We Belong · site plan, design morphology and sections"><img src="assets/img/belong-6-sm.webp" alt="Presentation sheet with site plan and diagrams" loading="lazy"><span class="tag">Site plan</span></button></li>
+          <li><button type="button" data-full="assets/img/belong-6.webp" data-caption="Where We Belong · site plan, design morphology and sections"><img src="assets/img/belong-6-sm.webp" alt="Presentation sheet with site plan and diagrams" loading="lazy"><span class="tag">Plan</span></button></li>
         </ul>
       </div>
     </article>
@@ -115,14 +124,14 @@
           <h3>Pasar Borong Gong Pauh</h3>
         </header>
         <p class="tagline">Shifting phases, living market.</p>
-        <p>The market is designed around its daily rhythm, from pre-dawn wholesale trading to the stalls that stay open into the afternoon. A modular, cradle-to-cradle timber structure lets bays be reused, extended and rearranged as trade changes over the years.</p>
-        <p>A planted “green lung” runs through the hall. Timber framing and batik-cloth canopies carry Terengganu's local identity.</p>
         <dl class="specs">
           <div><dt>Brief</dt><dd>MBKT market upgrade design competition</dd></div>
           <div><dt>Type</dt><dd>Commercial, public market</dd></div>
           <div><dt>Site</dt><dd>Gong Pauh, Kuala Terengganu</dd></div>
           <div><dt>Year</dt><dd>2025</dd></div>
         </dl>
+        <p>The market is designed around its daily rhythm, from pre-dawn wholesale trading to the stalls that stay open into the afternoon. A modular, cradle-to-cradle timber structure lets bays be reused, extended and rearranged as trade changes over the years.</p>
+        <p>A planted “green lung” runs through the hall. Timber framing and batik-cloth canopies carry Terengganu's local identity.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/pasar-2.webp" data-caption="Pasar Borong Gong Pauh · main entrance"><img src="assets/img/pasar-2-sm.webp" alt="Market entrance under a layered timber roof" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/pasar-3.webp" data-caption="Pasar Borong Gong Pauh · dry and half-dry market"><img src="assets/img/pasar-3-sm.webp" alt="Busy market aisle with fruit stalls" loading="lazy"></button></li>
@@ -143,14 +152,14 @@
           <h3>Tidesmith Atelier</h3>
         </header>
         <p class="tagline">Where timber meets the tide.</p>
-        <p>An academy for Pulau Duyong's living tradition of timber boat building. The monsoon and prevailing winds set out a breezeway that forms the building's main spine. Where the two meet, a central courtyard gives people a place to gather and find their way.</p>
-        <p>The site steps from public to private. Exhibition and F&amp;B spaces face the river, the boat-building dock sits at the semi-private centre, and the academic wing stays quiet at the southern end.</p>
         <dl class="specs">
           <div><dt>Studio</dt><dd>Design Studio 5</dd></div>
           <div><dt>Type</dt><dd>Education, cultural</dd></div>
           <div><dt>Site</dt><dd>Pulau Duyong, Kuala Terengganu</dd></div>
           <div><dt>Focus</dt><dd>Passive ventilation, timber craft</dd></div>
         </dl>
+        <p>An academy for Pulau Duyong's living tradition of timber boat building. The monsoon and prevailing winds set out a breezeway that forms the building's main spine. Where the two meet, a central courtyard gives people a place to gather and find their way.</p>
+        <p>The site steps from public to private. Exhibition and F&amp;B spaces face the river, the boat-building dock sits at the semi-private centre, and the academic wing stays quiet at the southern end.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/tide-2.webp" data-caption="Tidesmith Atelier · the academy from the river"><img src="assets/img/tide-2-sm.webp" alt="Boat-making academy on the riverbank with a boat in the foreground" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/tide-3.webp" data-caption="Tidesmith Atelier · indoor exhibition space and central plaza"><img src="assets/img/tide-3-sm.webp" alt="Interior exhibition hall and planted central plaza" loading="lazy"></button></li>
@@ -170,14 +179,14 @@
           <h3>Merdeka Morphosis</h3>
         </header>
         <p class="tagline">Evolution towards sustainable modernism.</p>
-        <p>A proposal to restore and extend Stadium Merdeka, where Malaysia's independence was declared. A continuous “infinity loop” wraps the existing stadium, linking it with nearby heritage buildings and the new Merdeka 118 tower into one line from past to future.</p>
-        <p>The loop is a diagrid steel frame with a space-frame truss, double-glazed panels and external GRP solar shading.</p>
         <dl class="specs">
           <div><dt>Result</dt><dd><strong>Top 10 finalist</strong>, CIDB × MSSA Open Idea Competition</dd></div>
           <div><dt>Type</dt><dd>Conservation, sports venue</dd></div>
           <div><dt>Site</dt><dd>Jalan Maharajalela, Kuala Lumpur</dd></div>
           <div><dt>Year</dt><dd>2024</dd></div>
         </dl>
+        <p>A proposal to restore and extend Stadium Merdeka, where Malaysia's independence was declared. A continuous “infinity loop” wraps the existing stadium, linking it with nearby heritage buildings and the new Merdeka 118 tower into one line from past to future.</p>
+        <p>The loop is a diagrid steel frame with a space-frame truss, double-glazed panels and external GRP solar shading.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/merdeka-2.webp" data-caption="Merdeka Morphosis · the loop over the stands"><img src="assets/img/merdeka-2-sm.webp" alt="Aerial view of the stadium loop over the pitch" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/merdeka-3.webp" data-caption="Merdeka Morphosis · inside the bowl"><img src="assets/img/merdeka-3-sm.webp" alt="View from inside the stadium bowl toward the city" loading="lazy"></button></li>
@@ -198,14 +207,14 @@
           <h3>The Crossroad of Life</h3>
         </header>
         <p class="tagline">Are your choices truly right or wrong?</p>
-        <p>A centre that turns faith into a spatial experience instead of a lesson. Sacred axes drawn from nearby Buddhist, Hindu and Islamic landmarks lay out the plan.</p>
-        <p>Visitors move from the Ordinary World through the narrowing, dim Realm of Shadows, then rise into the open City of Light. A water spine guides the way and recalls purification, rebirth and cleansing across the three faiths.</p>
         <dl class="specs">
           <div><dt>Studio</dt><dd>Design Studio 4</dd></div>
           <div><dt>Type</dt><dd>Community, cultural</dd></div>
           <div><dt>Site</dt><dd>Hat Yai Municipal Park, Songkhla</dd></div>
           <div><dt>Focus</dt><dd>Narrative, sensory sequence</dd></div>
         </dl>
+        <p>A centre that turns faith into a spatial experience instead of a lesson. Sacred axes drawn from nearby Buddhist, Hindu and Islamic landmarks lay out the plan.</p>
+        <p>Visitors move from the Ordinary World through the narrowing, dim Realm of Shadows, then rise into the open City of Light. A water spine guides the way and recalls purification, rebirth and cleansing across the three faiths.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/crossroad-2.webp" data-caption="The Crossroad of Life · the City of Light, ascendance"><img src="assets/img/crossroad-2-sm.webp" alt="Glass-roofed walkway with bare trees" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/crossroad-4.webp" data-caption="The Crossroad of Life · the Ordinary World"><img src="assets/img/crossroad-4-sm.webp" alt="Narrow timber-framed passage with a visitor" loading="lazy"></button></li>
@@ -225,14 +234,14 @@
           <h3>Trade Through Time</h3>
         </header>
         <p class="tagline">How Hat Yai's night markets came to be.</p>
-        <p>A pavilion that tells the story of Hat Yai's markets, from the railway market to the informal, formal and night markets. The form goes from open to enclosed and from daylight to dusk.</p>
-        <p>Spaces for sound, smell and taste sit on the strongest wind path, so the breeze carries the market atmosphere through the building.</p>
         <dl class="specs">
           <div><dt>Studio</dt><dd>Design Studio 4</dd></div>
           <div><dt>Type</dt><dd>Pavilion, exhibition</dd></div>
           <div><dt>Site</dt><dd>Hat Yai Municipal Park, Songkhla</dd></div>
           <div><dt>Focus</dt><dd>Sensory design, local history</dd></div>
         </dl>
+        <p>A pavilion that tells the story of Hat Yai's markets, from the railway market to the informal, formal and night markets. The form goes from open to enclosed and from daylight to dusk.</p>
+        <p>Spaces for sound, smell and taste sit on the strongest wind path, so the breeze carries the market atmosphere through the building.</p>
         <ul class="thumbs" aria-label="More images">
           <li><button type="button" data-full="assets/img/trade-2.webp" data-caption="Trade Through Time · aerial view"><img src="assets/img/trade-2-sm.webp" alt="Aerial view of the pavilion in the park" loading="lazy"></button></li>
           <li><button type="button" data-full="assets/img/trade-3.webp" data-caption="Trade Through Time · sensory diagram"><img src="assets/img/trade-3-sm.webp" alt="Diagram of sight, smell, touch and sound zones" loading="lazy"></button></li>
@@ -305,7 +314,7 @@
         </div>
       </li>
       <li class="row">
-        <p class="row-date">At SEGi</p>
+        <p class="row-date">Leadership</p>
         <div class="row-main">
           <h3>President · SEGi Architecture Student Society</h3>
         </div>
@@ -478,6 +487,6 @@
   <button class="viewer-btn viewer-close" type="button" aria-label="Close viewer">Close</button>
 </dialog>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=202610141939" defer></script>
 </body>
 </html>

@@ -13,7 +13,8 @@ https://songkhuen0828.github.io/calista-chiew/)
 
 ## Updating
 
-Edit `index.html`, then redeploy with `npx vercel deploy --prod` (and push to `main`
+After changing `style.css` or `main.js`, bump the `?v=` number on their links in
+`index.html` (assets are cached for a day). Edit `index.html`, then redeploy with `npx vercel deploy --prod` (and push to `main`
 to update the GitHub Pages copy).
 
 To regenerate images and PDFs after the CV or portfolio changes, put the new
@@ -23,3 +24,4 @@ To regenerate images and PDFs after the CV or portfolio changes, put the new
     python3 tools/build_assets.py
 
 The image list (which PDF image goes where) is the `MANIFEST` in that script.
+The link-preview card (`assets/img/og.jpg`) is drawn by `python3 tools/build_og.py`.

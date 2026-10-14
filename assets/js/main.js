@@ -1,4 +1,36 @@
 (() => {
+  // Phone menu: the section links drop down under the top bar.
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('sections-nav');
+  if (menuBtn && nav) {
+    const setOpen = (open) => {
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? 'Close' : 'Menu';
+      nav.classList.toggle('open', open);
+    };
+    menuBtn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); menuBtn.focus(); }
+    });
+  }
+
+  // Mark the nav link for the section currently on screen.
+  const links = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((a) => {
+          if (a.getAttribute('href') === `#${entry.target.id}`) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      }
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach((section) => spy.observe(section));
+  }
+
   // Image viewer: every [data-full] inside a [data-gallery] belongs to that gallery.
   const viewer = document.querySelector('.viewer');
   if (!viewer || typeof viewer.showModal !== 'function') return;

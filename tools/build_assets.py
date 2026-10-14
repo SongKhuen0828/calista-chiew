@@ -98,14 +98,6 @@ def main():
     portrait.save(f"{OUT}/portrait.webp", "WEBP", quality=86, method=6)
     print("portrait", portrait.size)
 
-    # Link-preview image (WhatsApp / LinkedIn want a JPEG around 1200x630)
-    hero = xref_to_image(doc, 484)
-    w, h = hero.size
-    crop_h = round(w * 630 / 1200)
-    top = (h - crop_h) // 2
-    hero.crop((0, top, w, top + crop_h)).resize((1200, 630), Image.LANCZOS).save(
-        f"{OUT}/og.jpg", "JPEG", quality=84)
-
     shutil.copy(CV, "assets/docs/Calista-Chiew-CV.pdf")
     # The source portfolio has a leftover editing note on page 22; publish a
     # copy with just that sentence removed and leave the original untouched.
